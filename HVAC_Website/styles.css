@@ -1,0 +1,299 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo img {
+    width: 300px; /* Adjust based on the size of your logo */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    color: #0074D9; /* Add hover effect */
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #0074D9; /* Customize with your desired color */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Just adjust the margin-top of the button */
+.cta-button {
+    margin-top: 30px; /* Adjust this value as needed to move it down a little */
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #FFDC00; /* Yellow */
+    color: #333;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #ffab00; /* Slightly darker yellow */
+}
+
+
+/* Refined Services Section */
+.services {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Soft background for contrast */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly larger cards */
+    gap: 30px; /* More space between cards */
+    justify-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Elevation effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #2d2d2d; /* Darker color for title */
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #777; /* Lighter gray text */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-card .cta-button {
+    background-color: #e2c97b; /* Golden button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.service-card .cta-button:hover {
+    background-color: #d1b16e; /* Darker golden shade on hover */
+}
+
+/* Image Styling within Service Cards */
+.service-card img {
+    width: 100%; /* Ensure the image covers the width of the card */
+    height: 200px; /* Fixed height for consistent size */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 10px;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+/* Adding subtle animations for a dynamic effect */
+.service-card h3, .service-card p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.service-card:nth-child(1) h3, .service-card:nth-child(1) p {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) h3, .service-card:nth-child(2) p {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) h3, .service-card:nth-child(3) p {
+    animation-delay: 0.3s;
+}
+
+.service-card:nth-child(4) h3, .service-card:nth-child(4) p {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service Cards Responsiveness */
+@media screen and (max-width: 768px) {
+    .service-cards {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+
+    .service-card {
+        padding: 20px; /* Slightly smaller padding */
+    }
+
+    .service-card img {
+        height: 180px; /* Slightly smaller image size for medium screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-cards {
+        grid-template-columns: 1fr; /* Stack services on small screens */
+    }
+
+    .service-card {
+        padding: 15px; /* Further reduce padding on small screens */
+    }
+
+    .service-card img {
+        height: 160px; /* Further reduce image size on small screens */
+    }
+
+    .service-card h3 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    .service-card p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+}
+
+
+/* Testimonials Section Styles */
+.testimonials {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* Footer Section Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #FFDC00;
+    font-weight: bold;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+/* New section for the quote button */
+.quote-section {
+    text-align: center;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+.quote-section .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #FFDC00; /* Yellow */
+    color: #333;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.quote-section .cta-button:hover {
+    background-color: #ffab00; /* Slightly darker yellow */
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Go Ductless Inc. provides heating, cooling, and ductless HVAC services in the Toronto and GTA area.">
+    <title>Go Ductless Inc.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/logo2.png" alt="Go Ductless Inc. Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Go Ductless Inc.</h2>
+            <p>Your trusted HVAC contractor serving Toronto and the GTA area.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+ <!-- Services Section -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+        <!-- Service 1 -->
+        <div class="service-card" onclick="showServiceDetails(1)">
+            <h3>Heating</h3>
+            <p>Efficient heating systems for your home and office.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" onclick="showServiceDetails(2)">
+            <h3>Cooling</h3>
+            <p>Cooling solutions to keep your space comfortable all year long.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" onclick="showServiceDetails(3)">
+            <h3>Ductless Systems</h3>
+            <p>Affordable and efficient ductless heating and cooling systems.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" onclick="showServiceDetails(4)">
+            <h3>Heat Pumps</h3>
+            <p>Energy-efficient heat pumps for your home or business.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Individual Service Detail Sections -->
+<section id="service-detail-1" class="service-detail">
+    <h3>Heating</h3>
+    <img src="images/heating.jpeg" alt="Heating Image">
+    <p>Efficient heating systems for your home and office. Our solutions are designed to optimize energy consumption while providing maximum comfort. Whether you need a new installation or repair services, we're here to help!</p>
+    <button onclick="hideServiceDetails(1)">Close</button>
+</section>
+
+<section id="service-detail-2" class="service-detail">
+    <h3>Cooling</h3>
+    <img src="images/cooling.jpeg.webp" alt="Cooling Image">
+    <p>Cooling solutions to keep your space comfortable all year long. We provide top-quality air conditioning systems and installation, repair, and maintenance services for homes and offices.</p>
+    <button onclick="hideServiceDetails(2)">Close</button>
+</section>
+
+<section id="service-detail-3" class="service-detail">
+    <h3>Ductless Systems</h3>
+    <img src="images/ductlesssystem.png" alt="Ductless Systems Image">
+    <p>Affordable and efficient ductless heating and cooling systems. Perfect for homes and offices that don't have existing ducts. We provide complete installation and maintenance services for ductless systems.</p>
+    <button onclick="hideServiceDetails(3)">Close</button>
+</section>
+
+<section id="service-detail-4" class="service-detail">
+    <h3>Heat Pumps</h3>
+    <img src="images/heatpump.jpeg" alt="Heat Pumps Image">
+    <p>Energy-efficient heat pumps for your home or business. Heat pumps are a great solution for both heating and cooling needs. We offer top-notch installation and repair services for heat pumps.</p>
+    <button onclick="hideServiceDetails(4)">Close</button>
+</section>
+
+
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Great service! They installed our new heat pump quickly and professionally." - Jane D.</p>
+        </div>
+        <div class="testimonial">
+            <p>"I highly recommend Go Ductless Inc. for all HVAC needs. Reliable and efficient!" - John S.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Go Ductless Inc. | Serving Toronto and the GTA Area</p>
+            <p>Email: <a href="mailto:goductlessinc@gmail.com">goductlessinc@gmail.com</a></p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/go-ductless-inc">Facebook</a>
+                <a href="https://twitter.com/go-ductless-inc">Twitter</a>
+                <!-- Add other social media links here -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add the JavaScript -->
+    <script>
+        // Show service detail when a service card is clicked
+        function showServiceDetails(serviceId) {
+            // Hide all service detail sections
+            const details = document.querySelectorAll('.service-detail');
+            details.forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            // Show the clicked service detail
+            const serviceDetail = document.getElementById('service-detail-' + serviceId);
+            serviceDetail.style.display = 'block';
+        }
+
+        // Hide service detail when the close button is clicked
+        function hideServiceDetails(serviceId) {
+            const serviceDetail = document.getElementById('service-detail-' + serviceId);
+            serviceDetail.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
